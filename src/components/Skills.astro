@@ -1,0 +1,71 @@
+---
+import { Terminal, Trophy, Star } from "lucide-astro"
+
+type Skill = {
+  icon: any;
+  header: string;
+  desc: string;
+};
+const skills: Skill[] = []
+
+addSkill(skills, Terminal, "Full Stack", "Full Stack")
+addSkill(skills, Trophy, "Industry Leader", "Full Stack")
+addSkill(skills, Star, "Strategy-Minded", "Full Stack")
+
+function addSkill(skills: Skill[], icon: any, header: string, desc: string) {
+  skills.push({ icon, header, desc })
+}
+---
+
+<section class="box skills">
+  {
+    skills.map((skill, index) => (
+      <div class="stack gap-2 lg:gap-4">
+        <skill.icon color="var(--accent-regular)" size="2.5rem" gradient/>
+        <h2>{skill.header}</h2>
+        <p>
+          {skill.desc}
+        </p>
+      </div>
+    ))
+  }
+</section>
+
+<style>
+  .box {
+    border: 1px solid var(--gray-800);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    background-color: var(--gray-999_40);
+    box-shadow: var(--shadow-sm);
+
+    @media (min-width: 50em) {
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    h2 {
+      font-size: var(--text-lg);
+    }
+
+    p {
+      color: var(--gray-400);
+    }
+
+    @media (min-width: 50em) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5rem;
+
+      h2 {
+        font-size: var(--text-2xl);
+      }
+    }
+  }
+</style>
