@@ -32,8 +32,8 @@ const { title, description } = Astro.props;
     <style lang="scss">
       :root {
         --_placeholder-bg: linear-gradient(transparent, transparent);
-        --bg-image-main: url("/assets/backgrounds/bg-main-light-800w.jpg");
-        --bg-image-main-curves: url("/assets/backgrounds/bg-main-light.svg");
+        --bg-image-main: url("/resume_devops/assets/backgrounds/bg-main-light-800w.jpg");
+        --bg-image-main-curves: url("/resume_devops/assets/backgrounds/bg-main-light.svg");
         --bg-image-subtle-1: var(--_placeholder-bg);
         --bg-image-subtle-2: var(--_placeholder-bg);
         --bg-image-footer: var(--_placeholder-bg);
@@ -45,41 +45,41 @@ const { title, description } = Astro.props;
         --bg-gradient-size: calc(var(--bg-scale) * 100%);
 
         &.theme-dark {
-          --bg-image-main: url("/assets/backgrounds/bg-main-dark-800w.jpg");
-          --bg-image-main-curves: url("/assets/backgrounds/bg-main-dark.svg");
+          --bg-image-main: url("/resume_devops/assets/backgrounds/bg-main-dark-800w.jpg");
+          --bg-image-main-curves: url("/resume_devops/assets/backgrounds/bg-main-dark.svg");
           --bg-svg-blend-mode: darken;
           --bg-blend-mode: lighten;
         }
 
         &.loaded {
-          --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-light-800w.jpg");
-          --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-light-800w.jpg");
-          --bg-image-footer: url("/assets/backgrounds/bg-footer-light-800w.jpg");
+          --bg-image-subtle-1: url("/resume_devops/assets/backgrounds/bg-subtle-1-light-800w.jpg");
+          --bg-image-subtle-2: url("/resume_devops/assets/backgrounds/bg-subtle-2-light-800w.jpg");
+          --bg-image-footer: url("/resume_devops/assets/backgrounds/bg-footer-light-800w.jpg");
 
           &.theme-dark {
-            --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-dark-800w.jpg");
-            --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-dark-800w.jpg");
-            --bg-image-footer: url("/assets/backgrounds/bg-footer-dark-800w.jpg");
+            --bg-image-subtle-1: url("/resume_devops/assets/backgrounds/bg-subtle-1-dark-800w.jpg");
+            --bg-image-subtle-2: url("/resume_devops/assets/backgrounds/bg-subtle-2-dark-800w.jpg");
+            --bg-image-footer: url("/resume_devops/assets/backgrounds/bg-footer-dark-800w.jpg");
           }
         }
 
         @media (min-width: 50em) {
           --bg-scale: 1;
-          --bg-image-main: url("/assets/backgrounds/bg-main-light-1440w.jpg");
+          --bg-image-main: url("/resume_devops/assets/backgrounds/bg-main-light-1440w.jpg");
 
           &.theme-dark {
-            --bg-image-main: url("/assets/backgrounds/bg-main-dark-1440w.jpg");
+            --bg-image-main: url("/resume_devops/assets/backgrounds/bg-main-dark-1440w.jpg");
           }
 
           &.loaded {
-            --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-light-1440w.jpg");
-            --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-light-1440w.jpg");
-            --bg-image-footer: url("/assets/backgrounds/bg-footer-light-1440w.jpg");
+            --bg-image-subtle-1: url("/resume_devops/assets/backgrounds/bg-subtle-1-light-1440w.jpg");
+            --bg-image-subtle-2: url("/resume_devops/assets/backgrounds/bg-subtle-2-light-1440w.jpg");
+            --bg-image-footer: url("/resume_devops/assets/backgrounds/bg-footer-light-1440w.jpg");
 
             &.theme-dark {
-              --bg-image-subtle-1: url("/assets/backgrounds/bg-subtle-1-dark-1440w.jpg");
-              --bg-image-subtle-2: url("/assets/backgrounds/bg-subtle-2-dark-1440w.jpg");
-              --bg-image-footer: url("/assets/backgrounds/bg-footer-dark-1440w.jpg");
+              --bg-image-subtle-1: url("/resume_devops/assets/backgrounds/bg-subtle-1-dark-1440w.jpg");
+              --bg-image-subtle-2: url("/resume_devops/assets/backgrounds/bg-subtle-2-dark-1440w.jpg");
+              --bg-image-footer: url("/resume_devops/assets/backgrounds/bg-footer-dark-1440w.jpg");
             }
           }
         }
@@ -89,7 +89,7 @@ const { title, description } = Astro.props;
         min-height: 100%;
         isolation: isolate;
         background:
-          url("/assets/backgrounds/noise.png") top center/220px repeat,
+          url("/resume_devops/assets/backgrounds/noise.png") top center/220px repeat,
           /*footer*/ var(--bg-image-footer) bottom
             center/var(--bg-gradient-size) no-repeat,
           /*header1*/ var(--bg-image-main-curves) top
