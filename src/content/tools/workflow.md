@@ -1,9 +1,6 @@
 ---
 title: Workflow
-order: 4
-description: |
-  We paired with a cutting-edge music API and a team of horticulturalists
-  to build AI-generated playlists that maximize houseplant health.
+order: 6
 icons:
   - Obsidian
   - Todoist

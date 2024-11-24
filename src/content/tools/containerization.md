@@ -1,9 +1,6 @@
 ---
 title: Containerization
-order: 1
-description: |
-  We paired with a cutting-edge music API and a team of horticulturalists
-  to build AI-generated playlists that maximize houseplant health.
+order: 2
 icons:
   - Docker
   - Docker-compose
