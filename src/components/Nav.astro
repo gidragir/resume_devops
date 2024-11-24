@@ -1,8 +1,8 @@
 ---
-import Icon from "@components/ui/Icon.astro";
-import ThemeToggle from "@components/ThemeToggle.astro";
-import { Github, Linkedin } from "lucide-astro"
-import { DailydevIcon } from "@components/DailydevIcon"
+import Icon from "@components/ui/Icon.astro"
+import ThemeToggle from "@components/ThemeToggle.astro"
+import type { iconPaths } from "@components/IconPaths"
+
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
@@ -11,20 +11,21 @@ const textLinks: { label: string; href: string }[] = [
 	{ label: "About", href: "/about/" },
 ];
 
-type icon = typeof Github | typeof DailydevIcon
 type iconLink = {
 	label: string,
 	href: string,
-	icon: icon
+	icon: keyof typeof iconPaths
 }
 
 const iconLinks: iconLink[] = []
 
-addIconLink(iconLinks, "GitHub", "https://github.com/gidragir", Github)
-addIconLink(iconLinks, "LinkedIn", "www.linkedin.com/in/илья-балтер-02427723a", Linkedin)
-addIconLink(iconLinks, "DailyDev", "https://dly.to/5DHznxhbkuA", DailydevIcon)
+addIconLink(iconLinks, "GitHub", "https://github.com/gidragir", "github-logo")
+addIconLink(iconLinks, "LinkedIn", "www.linkedin.com/in/илья-балтер-02427723a", "linkedin-logo")
+addIconLink(iconLinks, "DailyDev", "https://dly.to/5DHznxhbkuA", "dailidev-logo")
+addIconLink(iconLinks, "Telegram", "https://t.me/gidragir", "telegram-logo")
+addIconLink(iconLinks, "Whataspp", "https://wa.me/77027449952", "whatsapp-logo")
 
-function addIconLink(iconLinks: iconLink[], label: string, href: string, icon: icon) {
+function addIconLink(iconLinks: iconLink[], label: string, href: string, icon: keyof typeof iconPaths) {
 	iconLinks.push({ label, href, icon })
 }
 ---
@@ -75,7 +76,7 @@ function addIconLink(iconLinks: iconLink[], label: string, href: string, icon: i
 					iconLinks.map((iconLink) => (
 						<a href={iconLink.href} class="social">
 							<span class="sr-only">{iconLink.label}</span>
-							<iconLink.icon color="var(--accent-regular)" size="2rem" />
+							<Icon icon={iconLink.icon} />
 						</a>
 					))
 				}
@@ -111,7 +112,7 @@ function addIconLink(iconLinks: iconLink[], label: string, href: string, icon: i
 					iconLinks.map((iconLink) => (
 						<a href={iconLink.href} class="social">
 							<span class="sr-only">{iconLink.label}</span>
-							<iconLink.icon color="var(--accent-regular)" size="2rem" />
+							<Icon icon={iconLink.icon} />
 						</a>
 					))
 				}
@@ -162,6 +163,10 @@ function addIconLink(iconLinks: iconLink[], label: string, href: string, icon: i
 </script>
 
 <style>
+	.icon {
+		color: var(--gray-400);
+	}
+
 	nav {
 		z-index: 9999;
 		position: relative;
