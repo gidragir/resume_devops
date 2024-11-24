@@ -1,21 +1,21 @@
 ---
-import type { CollectionEntry, getCollection } from "astro:content"
-import { Image } from "astro:assets"
+import type { CollectionEntry, getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
-import Pill from "@components/ui/Pill.astro"
+import Pill from "@components/ui/Pill.astro";
 
 interface Props {
   entry: CollectionEntry<"tools">;
 }
- 
+
 const { data, slug } = Astro.props.entry;
 ---
 
 <li class="mention-card">
-    <span class="title">{data.title}</span>
-    <div class="icons">
-      {data.icons.map((t: string) => <Pill>{t}</Pill>)}
-    </div>
+  <span class="title">{data.title}</span>
+  <div class="icons">
+    {data.icons.map((t: string) => <Pill>{t}</Pill>)}
+  </div>
 </li>
 
 <style lang="scss">
@@ -49,7 +49,6 @@ const { data, slug } = Astro.props.entry;
       border-radius: 0.9375rem;
     }
   }
-
 
   .icons {
     display: flex;

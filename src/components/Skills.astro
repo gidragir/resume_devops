@@ -1,20 +1,25 @@
 ---
-import { Flame, Cog, Speech } from "lucide-astro"
+import { Flame, Cog, Speech } from "lucide-astro";
 
-type icon = typeof Flame
+type icon = typeof Flame;
 type Skill = {
   icon: icon;
   header: string;
   desc: string;
 };
-const skills: Skill[] = []
+const skills: Skill[] = [];
 
-addSkill(skills, Flame, "Eager", "I enjoy learning new things")
-addSkill(skills, Cog, "Automator", "Driven to automate processes")
-addSkill(skills, Speech, "Social", "Skilled in collaboration with developers, IT professionals, and clients")
+addSkill(skills, Flame, "Eager", "I enjoy learning new things");
+addSkill(skills, Cog, "Automator", "Driven to automate processes");
+addSkill(
+  skills,
+  Speech,
+  "Social",
+  "Skilled in collaboration with developers, IT professionals, and clients"
+);
 
 function addSkill(skills: Skill[], icon: icon, header: string, desc: string) {
-  skills.push({ icon, header, desc })
+  skills.push({ icon, header, desc });
 }
 ---
 
@@ -22,11 +27,9 @@ function addSkill(skills: Skill[], icon: icon, header: string, desc: string) {
   {
     skills.map((skill, index) => (
       <div class="stack gap-2 lg:gap-4">
-        <skill.icon color="var(--accent-regular)" size="2.5rem"/>
+        <skill.icon color="var(--accent-regular)" size="2.5rem" />
         <h2>{skill.header}</h2>
-        <p>
-          {skill.desc}
-        </p>
+        <p>{skill.desc}</p>
       </div>
     ))
   }
