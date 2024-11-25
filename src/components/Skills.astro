@@ -9,11 +9,11 @@ type Skill = {
 }
 const skills: Skill[] = []
 
-addSkill(skills, Flame, "Eager", "I enjoy learning new things")
-addSkill(skills, Cog, "Automator", "Driven to automate processes")
-addSkill(skills, Speech, "Social", "Skilled in collaboration with developers, IT professionals, and clients")
+addSkill(Flame, "Eager", "I enjoy learning new things")
+addSkill(Cog, "Automator", "Driven to automate processes")
+addSkill(Speech, "Social", "Skilled in collaboration with developers, IT professionals, and clients")
 
-function addSkill(skills: Skill[], icon: icon, header: string, desc: string) {
+function addSkill(icon: icon, header: string, desc: string) {
   skills.push({ icon, header, desc })
 }
 ---
