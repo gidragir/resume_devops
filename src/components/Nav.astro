@@ -102,7 +102,7 @@ function addIconLink(
                 "link",
                 {
                   active:
-                    Astro.url.href === href ||
+                    Astro.url.pathname === href ||
                     (href !== "/" && Astro.url.pathname.endsWith(href)),
                 },
               ]}

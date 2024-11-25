@@ -1,0 +1,92 @@
+---
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+}
+
+const {
+  title = "Ilya Balter: Personal Site",
+  description = "The personal site of Ilya Balter",
+} = Astro.props;
+---
+
+<section class="section with-background bg-variant">
+  <header class="section-header stack gap-2 lg:gap-4">
+    <h3>{title}</h3>
+    <p>
+      {description}
+    </p>
+  </header>
+
+  <div class="gallery">
+    <slot />
+  </div>
+</section>
+
+<style lang="scss">
+  .section {
+    display: grid;
+    gap: 2rem;
+
+    @media (min-width: 50em) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+      gap: 5rem;
+    }
+  }
+
+  .with-background {
+    position: relative;
+
+    &::before {
+      --hero-bg: var(--bg-image-subtle-2);
+
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      left: 50%;
+      width: 100vw;
+      aspect-ratio: calc(2.25 / var(--bg-scale));
+      top: 0;
+      transform: translateY(-75%) translateX(-50%);
+      background:
+        url("/resume_devops/assets/backgrounds/noise.png") top center/220px
+          repeat,
+        var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+        var(--gray-999);
+      background-blend-mode: overlay, normal, normal, normal;
+      mix-blend-mode: var(--bg-blend-mode);
+      z-index: -1;
+    }
+    &.bg-variant::before {
+      --hero-bg: var(--bg-image-subtle-1);
+    }
+  }
+
+  .section-header {
+    justify-self: center;
+    text-align: center;
+    max-width: 50ch;
+    font-size: var(--text-md);
+    color: var(--gray-300);
+
+    h3 {
+      font-size: var(--text-2xl);
+    }
+
+    @media (min-width: 50em) {
+      grid-area: header;
+      font-size: var(--text-lg);
+
+      h3 {
+        font-size: var(--text-4xl);
+      }
+    }
+  }
+
+  @media (min-width: 50em) {
+    .gallery {
+      grid-area: gallery;
+    }
+  }
+</style>

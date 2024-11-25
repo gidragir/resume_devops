@@ -3,13 +3,12 @@ import { getCollection } from "astro:content";
 
 import BaseLayout from "@layouts/BaseLayout.astro";
 
-import ContactCTA from "@components/ContactCTA.astro";
 import PortfolioPreview from "@components/PortfolioPreview.astro";
 import Hero from "@components/Hero.astro";
 import Grid from "@components/ui/Grid.astro";
 
 const projects = (await getCollection("work")).sort(
-  (a: any, b: any) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf()
+  (a: any, b: any) => b.data.start.valueOf() - a.data.start.valueOf()
 );
 ---
 
@@ -34,6 +33,5 @@ const projects = (await getCollection("work")).sort(
         }
       </Grid>
     </main>
-    <!-- <ContactCTA /> -->
   </div>
 </BaseLayout>
