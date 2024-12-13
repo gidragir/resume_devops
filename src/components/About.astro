@@ -1,0 +1,23 @@
+---
+import { Image } from "astro:assets"
+
+import { Mail } from "lucide-astro"
+
+const addContact = (value: string, icon: any) => (contact.push({ value, icon }))
+
+const contact:{value:string, icon:any}[] = []
+addContact("ilyabalter1@gmail.com", Mail)
+---
+
+<div class="resume-section shadow-lg row-span-3">
+    <Image class="rounded-full" src={"/resume_devops/me.jpg"} alt="" width="256" height="256" />
+
+    <h1>Ilya Balter</h1>
+
+    {contact.map(info => (
+        <div class="flex flex-row justify-evenly">
+            <info.icon />
+            <h2>{info.value}</h2>
+        </div>
+    ))}
+</div>

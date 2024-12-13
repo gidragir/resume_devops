@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    * {
+        @apply text-ctp-surface0 dark:text-ctp-text text-base;
+    }
+
+    h1 {
+        @apply text-2xl;
+    }
+
+    body {
+        @apply bg-ctp-flamingo dark:bg-ctp-base;
+    }
+    .resume-section {
+        @apply p-4 rounded-lg grid place-content-center bg-ctp-rosewater dark:bg-ctp-surface0;
+    }
+}
