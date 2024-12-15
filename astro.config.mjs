@@ -4,8 +4,8 @@ import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 
 import purgecss from "astro-purgecss";
-
 import compress from "astro-compress";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +28,9 @@ export default defineConfig({
       Image: false,
       SVG: false,
     }),
+    icon({
+      iconDir: "src/assets/icons",
+    })
   ],
   vite: {
     css: {

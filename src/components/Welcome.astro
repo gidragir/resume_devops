@@ -5,10 +5,9 @@ import Experience from "@components/Experience.astro";
 ---
 
 <div id="container">
-  <img id="background" alt="" fetchpriority="high" />
   <main class="flex justify-center flex-col h-full px-56">
     <div
-      class="grid grid-rows-3 grid-flow-col gap-4 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-fuchsia rounded-lg"
+      class="grid grid-rows-3 grid-cols-6 gap-4 font-mono text-white text-sm text-center font-bold leading-6 bg-stripes-fuchsia rounded-lg"
     >
       <About />
       <Skills />      
@@ -18,15 +17,6 @@ import Experience from "@components/Experience.astro";
 </div>
 
 <style lang="scss">
-  #background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: blur(100px);
-  }
 
   #container {
     font-family: Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans",

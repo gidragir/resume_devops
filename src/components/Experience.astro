@@ -1,3 +1,26 @@
-<div class="resume-section shadow-lg row-span-2 col-span-2">
-    03
+<div class="resume-section shadow-lg row-span-2 col-span-2 col-start-3 col-end-7">
+  <section>
+    <div>123</div>
+  </section>
 </div>
+
+<style>
+  section {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    margin-left: 1rem;
+    padding: 1rem 0;
+    position: relative;
+  }
+  section::before {
+    background-color: #3d444db3;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: max(2px, 0.125rem);
+  }
+</style>

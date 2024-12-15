@@ -1,23 +1,40 @@
 ---
 import { Image } from "astro:assets"
 
-import { Mail } from "lucide-astro"
+import { Icon } from 'astro-icon/components'
 
-const addContact = (value: string, icon: any) => (contact.push({ value, icon }))
+const tags: string[] = ["DevOps", "1C Software Developer"]
 
-const contact:{value:string, icon:any}[] = []
-addContact("ilyabalter1@gmail.com", Mail)
+const contact: { href: string, title: string, icon: string }[] = [
+    { href: "https://github.com/gidragir", title: "GitHub", icon: "GithubIcon" },
+    { href: "www.linkedin.com/in/илья-балтер-02427723a", title: "LinkedIn", icon: "LinkedinIcon" },
+    { href: "https://dly.to/5DHznxhbkuA", title: "DailyDev", icon: "DailydevIcon" },
+    { href: "https://wa.me/77027449952", title: "Whatsapp", icon: "WhatsappIcon" },
+    { href: "https://t.me/gidragir", title: "Telegram", icon: "TelegramIcon" },
+]
 ---
 
-<div class="resume-section shadow-lg row-span-3">
-    <Image class="rounded-full" src={"/resume_devops/me.jpg"} alt="" width="256" height="256" />
+<div class="resume-section shadow-lg row-span-3 col-start-1 col-end-3 flex flex-col items-center gap-5">
+    <Image class="rounded-full" src={"/resume_devops/me.jpg"} alt="" width="256" height="256" loading="eager" priority={true} />
 
-    <h1>Ilya Balter</h1>
-
-    {contact.map(info => (
-        <div class="flex flex-row justify-evenly">
-            <info.icon />
-            <h2>{info.value}</h2>
+    <div>
+        <h1>Ilya Balter</h1>
+        <div class="flex flex-row justify-around gap-3">
+            {tags.map(info => (
+                <span class="bg-[#4493f8] text-ctp-text dark:bg-[#1f6feb] rounded-2xl px-3 py-1 transition-all hover:scale-110">{info}</span>
+            ))}
         </div>
-    ))}
+    </div>
+
+    <h2>Who i am</h2>
+
+    <div class="flex flex-row justify-around gap-3">
+        {contact.map(info => (
+            <div class="flex flex-row">
+                <a href={info.href}>
+                    <Icon name={info.icon} size="30" class="transition-all hover:scale-125" />
+                </a>
+            </div>
+        ))}
+    </div>
 </div>
