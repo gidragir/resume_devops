@@ -18,6 +18,6 @@
         @apply bg-ctp-flamingo dark:bg-ctp-base;
     }
     .resume-section {
-        @apply p-4 rounded-lg grid place-content-center bg-ctp-rosewater dark:bg-ctp-surface0;
+        @apply p-5 rounded-lg flex flex-col content-start bg-ctp-rosewater dark:bg-ctp-surface0;
     }
 }

@@ -1,26 +1,108 @@
-<div class="resume-section shadow-lg row-span-2 col-span-2 col-start-3 col-end-7">
-  <section>
-    <div>123</div>
-  </section>
+---
+import { format } from "date-fns";
+
+import { Icon } from "astro-icon/components";
+
+const work: {
+  title: string;
+  dateStart: Date;
+  dateEnd: Date;
+  tags: string[];
+  description: string;
+}[] = [
+  {
+    title: 'ТОО "SMARTCO SOLUTIONS"',
+    dateStart: new Date(2024, 8, 1),
+    dateEnd: new Date(),
+    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
+    description:
+      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+  },
+  {
+    title: 'Компания по страхованию жизни "Евразия"',
+    dateStart: new Date(2023, 8, 1),
+    dateEnd: new Date(2024, 8, 1),
+    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
+    description:
+      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+  },
+  {
+    title: "Sulpak",
+    dateStart: new Date(2023, 5, 1),
+    dateEnd: new Date(2023, 8, 1),
+    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
+    description:
+      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+  },
+  {
+    title: 'ТОО "СВБ Интеллект Технологии"',
+    dateStart: new Date(2021, 8, 1),
+    dateEnd: new Date(2023, 5, 1),
+    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
+    description:
+      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+  },
+  {
+    title: 'ИП "Move IT"',
+    dateStart: new Date(2021, 5, 1),
+    dateEnd: new Date(2021, 8, 1),
+    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
+    description:
+      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+  },
+];
+---
+
+<div
+  class="resume-section shadow-lg row-span-2 col-start-3 col-end-9 flex flex-col"
+>
+  {
+    work.map((info) => (
+      <section class="work">
+        <Icon name="DailydevIcon" size="30" class="line_icon" />
+        <div class="w-full flex flex-col items-start ml-6 gap-1">
+          <div class="w-full">
+            <span class="float-start text-lg">{info.title}</span>
+            <span class="text-sm float-end">
+              {format(info.dateStart, "MMM. yyyy")} -
+              {format(info.dateEnd, "MMM. yyyy")}
+            </span>
+          </div>
+          <div class="flex flex-row gap-3">
+            {info.tags.map((tag) => (
+              <span class="text-sm bg-[#4493f8] text-ctp-text dark:bg-[#1f6feb] rounded-2xl px-2 py-1 transition-all hover:scale-110">
+                {tag}
+              </span>
+            ))}
+          </div>
+          <span class="w-full text-start text-sm">{info.description}</span>
+        </div>
+      </section>
+    ))
+  }
 </div>
 
-<style>
-  section {
-    width: 100px;
-    height: 100px;
+<style lang="scss">
+  .work {
+    width: full;
+    height: auto;
     display: flex;
     margin-left: 1rem;
     padding: 1rem 0;
     position: relative;
+
+    &::before {
+      background-color: #3d444db3;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: max(2px, 0.125rem);
+    }
   }
-  section::before {
-    background-color: #3d444db3;
-    bottom: 0;
-    content: "";
-    display: block;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: max(2px, 0.125rem);
+  .line_icon {
+    margin-left: calc(2rem / -2 + 1px);
   }
 </style>
