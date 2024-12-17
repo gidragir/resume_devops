@@ -1,3 +1,28 @@
-<div class="resume-section col-start-3 col-end-9">
-    02
+---
+import SkillCard from "@components/SkillCard.astro";
+
+class Skill {
+  category: string;
+  skills: { icon: string; alt?: string }[];
+
+  constructor(category: string, skills: [string, string?][]) {
+    this.category = category;
+    this.skills = skills.map(([icon, alt]) => ({ icon, alt }));
+  }
+}
+const skills: Skill[] = [
+  new Skill("Containerization", [["Docker"]]),
+  new Skill("CI/CD", [["GithubActions"], ["Gitlab"], ["Jenkins"], ["Ansible"]]),
+  new Skill("IaC", [["Terraform"], ["Ansible"]]),
+  new Skill("Monitoring", [["Prometheus"], ["Grafana"], ["Zabbix"]]),
+  new Skill("Virtualization", [["Hyper-V"], ["Proxmox"]]),
+];
+---
+
+<div class="resume-section col-start-3 col-end-9 flex flex-row flex-wrap gap-3">
+  {
+    skills.map((info: Skill) => (
+      <SkillCard category={info.category} skills={info.skills} />
+    ))
+  }
 </div>
