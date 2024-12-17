@@ -3,6 +3,9 @@ import { Image } from "astro:assets"
 
 import { Icon } from 'astro-icon/components'
 
+import Pill from "@components/Pill.astro"
+
+
 const tags: string[] = ["DevOps", "1C Software Developer"]
 
 const contact: { href: string, title: string, icon: string }[] = [
@@ -21,7 +24,7 @@ const contact: { href: string, title: string, icon: string }[] = [
         <h1>Ilya Balter</h1>
         <div class="flex flex-row justify-around gap-3">
             {tags.map(info => (
-                <span class="bg-[#4493f8] text-ctp-text dark:bg-[#1f6feb] rounded-2xl px-3 py-1 transition-all hover:scale-110">{info}</span>
+                <Pill text={info} />
             ))}
         </div>
     </div>
@@ -31,7 +34,7 @@ const contact: { href: string, title: string, icon: string }[] = [
     <div class="flex flex-row justify-around gap-3">
         {contact.map(info => (
             <div class="flex flex-row">
-                <a href={info.href}>
+                <a href={info.href} aria-label={info.title}>
                     <Icon name={info.icon} size="30" class="transition-all hover:scale-125" />
                 </a>
             </div>
