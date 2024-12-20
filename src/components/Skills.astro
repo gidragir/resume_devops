@@ -19,7 +19,7 @@ const skills: Skill[] = [
 ];
 ---
 
-<div class="resume-section col-start-3 col-end-9 flex flex-row flex-wrap gap-3">
+<div class="resume-section col-start-5 col-end-13 2xl:col-start-3 2xl:col-end-9 flex flex-row flex-wrap justify-around gap-3">
   {
     skills.map((info: Skill) => (
       <SkillCard category={info.category} skills={info.skills} />

@@ -10,7 +10,7 @@ const { category, skills } = Astro.props;
 
 <div>
   <span>{category}</span>
-  <ul>
+  <ul class="flex flex-col gap-2">
     {skills.map((skill: { icon: string; }) => (
       <li>
         <Pill text={skill.icon}></Pill>

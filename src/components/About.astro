@@ -3,6 +3,7 @@ import { Image } from "astro:assets"
 
 import { Icon } from 'astro-icon/components'
 
+import ThemeToggle from "@components/ThemeToggle.astro";
 import Pill from "@components/Pill.astro"
 
 
@@ -17,9 +18,10 @@ const contact: { href: string, title: string, icon: string }[] = [
 ]
 ---
 
-<div class="resume-section shadow-lg row-span-3 col-start-1 col-end-3 flex flex-col items-center gap-5">
+<div class="resume-section shadow-lg row-span-3 col-start-1 col-end-5 2xl:col-start-1 2xl:col-end-3 flex flex-col items-center gap-5">
     <Image class="rounded-full" src={"/resume_devops/me.jpg"} alt="" width="256" height="256" loading="eager" priority={true} />
-
+    <ThemeToggle />
+    
     <div>
         <h1>Ilya Balter</h1>
         <div class="flex flex-row justify-around gap-3">
