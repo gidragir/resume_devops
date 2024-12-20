@@ -1,45 +1,80 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
-import { Icon } from 'astro-icon/components'
+import { Icon } from "astro-icon/components";
 
 import ThemeToggle from "@components/ThemeToggle.astro";
-import Pill from "@components/Pill.astro"
+import Pill from "@components/Pill.astro";
 
+const tags: string[] = ["Junior DevOps", "1C Software Developer"];
 
-const tags: string[] = ["DevOps", "1C Software Developer"]
-
-const contact: { href: string, title: string, icon: string }[] = [
-    { href: "https://github.com/gidragir", title: "GitHub", icon: "GithubIcon" },
-    { href: "www.linkedin.com/in/илья-балтер-02427723a", title: "LinkedIn", icon: "LinkedinIcon" },
-    { href: "https://dly.to/5DHznxhbkuA", title: "DailyDev", icon: "DailydevIcon" },
-    { href: "https://wa.me/77027449952", title: "Whatsapp", icon: "WhatsappIcon" },
-    { href: "https://t.me/gidragir", title: "Telegram", icon: "TelegramIcon" },
-]
+const contact: { href: string; title: string; icon: string }[] = [
+  { href: "https://github.com/gidragir", title: "GitHub", icon: "GithubIcon" },
+  {
+    href: "www.linkedin.com/in/илья-балтер-02427723a",
+    title: "LinkedIn",
+    icon: "LinkedinIcon",
+  },
+  {
+    href: "https://dly.to/5DHznxhbkuA",
+    title: "DailyDev",
+    icon: "DailydevIcon",
+  },
+  {
+    href: "https://wa.me/77027449952",
+    title: "Whatsapp",
+    icon: "WhatsappIcon",
+  },
+  { href: "https://t.me/gidragir", title: "Telegram", icon: "TelegramIcon" },
+];
 ---
 
-<div class="resume-section shadow-lg row-span-3 col-start-1 col-end-5 2xl:col-start-1 2xl:col-end-3 flex flex-col items-center gap-5">
-    <Image class="rounded-full" src={"/resume_devops/me.jpg"} alt="" width="256" height="256" loading="eager" priority={true} />
-    <ThemeToggle />
-    
-    <div>
-        <h1>Ilya Balter</h1>
-        <div class="flex flex-row justify-around gap-3">
-            {tags.map(info => (
-                <Pill text={info} />
-            ))}
-        </div>
-    </div>
+<div
+  class="resume-section shadow-lg row-span-3 lg:col-start-1 lg:col-end-5 2xl:col-start-1 2xl:col-end-3 flex flex-col items-center gap-5"
+>
+  <Image
+    class="rounded-full"
+    src={"/resume_devops/me.jpg"}
+    alt=""
+    width="256"
+    height="256"
+    loading="eager"
+    priority={true}
+  />
 
-    <h2>Who i am</h2>
-
+  <div>
+    <dev class="flex flex-row justify-center align-middle gap-3 mb-2">
+      <h1>Ilya Balter</h1>
+      <ThemeToggle />
+    </dev>
     <div class="flex flex-row justify-around gap-3">
-        {contact.map(info => (
-            <div class="flex flex-row">
-                <a href={info.href} aria-label={info.title}>
-                    <Icon name={info.icon} size="30" class="transition-all hover:scale-125" />
-                </a>
-            </div>
-        ))}
+      {tags.map((info) => <Pill text={info} />)}
     </div>
+  </div>
+
+  <span class="text-justify">
+    4 years of experience in software development and customization, including
+    business process automation, system integration, and database
+    administration.
+  </span>
+  <span class="text-justify">
+    Designed and implemented solutions for data migration, development of new
+    modules, and optimization of corporate system configurations (1C, ERP).
+  </span>
+
+  <div class="flex flex-row justify-around gap-3">
+    {
+      contact.map((info) => (
+        <div class="flex flex-row">
+          <a href={info.href} aria-label={info.title}>
+            <Icon
+              name={info.icon}
+              size="30"
+              class="transition-all hover:scale-125"
+            />
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </div>

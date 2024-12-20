@@ -3,54 +3,73 @@ import { format } from "date-fns";
 
 import { Icon } from "astro-icon/components";
 
-import Pill from "@components/Pill.astro"
+import Pill from "@components/Pill.astro";
 
 const work: {
   title: string;
   dateStart: Date;
   dateEnd: Date;
   tags: string[];
-  description: string;
 }[] = [
   {
     title: 'ТОО "SMARTCO SOLUTIONS"',
     dateStart: new Date(2024, 8, 1),
     dateEnd: new Date(),
-    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
-    description:
-      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+    tags: [
+      "1C",
+      "ERP Development",
+      "Internal System Integration",
+      "Repository Administration",
+      "Database Administration",
+    ],
   },
   {
     title: 'Компания по страхованию жизни "Евразия"',
     dateStart: new Date(2023, 8, 1),
     dateEnd: new Date(2024, 8, 1),
-    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
-    description:
-      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+    tags: [
+      "1C",
+      "ERP Development",
+      "Custom Reports",
+      "Internal System Integration",
+      "Sales Planning Module Development",
+      "ESBD Integration",
+    ],
   },
   {
     title: "Sulpak",
     dateStart: new Date(2023, 5, 1),
     dateEnd: new Date(2023, 8, 1),
-    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
-    description:
-      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+    tags: [
+      "1C",
+      "Payroll Systems Development",
+      "HR Module Automation",
+      "Incentive Module Development",
+    ],
   },
   {
     title: 'ТОО "СВБ Интеллект Технологии"',
     dateStart: new Date(2021, 8, 1),
     dateEnd: new Date(2023, 5, 1),
-    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
-    description:
-      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+    tags: [
+      "1C",
+      "Module Development",
+      "Custom Reports",
+      "Extension Development",
+      "Data Migration",
+      "Integration Rules",
+    ],
   },
   {
     title: 'ИП "Move IT"',
     dateStart: new Date(2021, 5, 1),
     dateEnd: new Date(2021, 8, 1),
-    tags: ["1C", "ERP", "1C:Предприятие 8.3"],
-    description:
-      "📌 Разработка и внедрение ERP системы для компании (1С:Предприятие 8.3)",
+    tags: [
+      "1C",
+      "Data Migration",
+      "Extension Development",
+      "Integration Rules",
+    ],
   },
 ];
 ---
@@ -61,16 +80,20 @@ const work: {
   {
     work.map((info) => (
       <section class="work">
-        <Icon name="Bookmark" size="34" class="line_icon text-red-500 z-10 rounded-full bg-slate-200 dark:bg-slate-800 border-spacing-1 border-black dark:border-white p-1 shadow-md shadow-ctp-peach dark:shadow-ctp-blue" />
+        <Icon
+          name="Bookmark"
+          size="34"
+          class="line_icon z-10 rounded-full bg-slate-200 border-spacing-1 p-1 shadow-md shadow-ctp-peach dark:shadow-ctp-blue"
+        />
         <div class="w-full flex flex-col items-start ml-6 gap-1">
           <div class="w-full">
-            <span class="float-start text-lg">{info.title}</span>
+            <span class="float-start text-lg text-left">{info.title}</span>
             <span class="text-sm float-end">
               {format(info.dateStart, "MMM. yyyy")} -
               {format(info.dateEnd, "MMM. yyyy")}
             </span>
           </div>
-          <div class="flex flex-row gap-3">
+          <div class="flex flex-row flex-wrap gap-3">
             {info.tags.map((tag) => (
               <Pill text={tag} />
             ))}

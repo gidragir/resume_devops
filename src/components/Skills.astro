@@ -16,13 +16,30 @@ const skills: Skill[] = [
   new Skill("IaC", [["Terraform"], ["Ansible"]]),
   new Skill("Monitoring", [["Prometheus"], ["Grafana"], ["Zabbix"]]),
   new Skill("Virtualization", [["Hyper-V"], ["Proxmox"]]),
+  new Skill("Development", [["NodeJs"], ["Rust"], ["1C"]]),
 ];
 ---
 
-<div class="resume-section col-start-5 col-end-13 2xl:col-start-3 2xl:col-end-9 flex flex-row flex-wrap justify-around gap-3">
-  {
-    skills.map((info: Skill) => (
-      <SkillCard category={info.category} skills={info.skills} />
-    ))
-  }
+<div
+  class="resume-section col-start-5 col-end-13 2xl:col-start-3 2xl:col-end-9 flex flex-col gap-3"
+>
+  <div class="flex flex-row flex-wrap justify-around gap-3">
+    {
+      skills.map((info: Skill) => (
+        <SkillCard category={info.category} skills={info.skills} />
+      ))
+    }
+  </div>
+
+  <div class="text-left">
+    <span class="text-justify">
+      Experience with containerization (Docker), virtual machines (VM), basic
+      monitoring, and CI/CD pipelines.
+    </span>
+    <span class="text-justify">
+      Actively transitioning to a DevOps role: learning infrastructure management
+      (Terraform, Ansible), containerization and orchestration tools (Docker,
+      Kubernetes), and monitoring systems (Prometheus, Grafana).
+    </span>
+  </div>
 </div>
