@@ -3,10 +3,10 @@ import { Image } from "astro:assets";
 
 import { Icon } from "astro-icon/components";
 
-import ThemeToggle from "@components/ThemeToggle.astro";
-import Pill from "@components/Pill.astro";
+import ThemeToggle from "@ui/ThemeToggle.astro";
+import Pill from "@ui/Pill.astro";
 
-const tags: string[] = ["Junior DevOps", "1C Software Developer"];
+const tags: string[] = ["Junior DevOps", "Middle 1C Developer"];
 
 const contact: { href: string; title: string; icon: string }[] = [
   { href: "https://github.com/gidragir", title: "GitHub", icon: "GithubIcon" },
@@ -30,7 +30,7 @@ const contact: { href: string; title: string; icon: string }[] = [
 ---
 
 <div
-  class="resume-section shadow-lg row-span-3 lg:col-start-1 lg:col-end-5 2xl:col-start-1 2xl:col-end-3 flex flex-col items-center gap-5"
+  class="items-center row-span-3 gap-5 resume-section 2xl:col-start-1 2xl:col-end-3"
 >
   <Image
     class="rounded-full"
@@ -43,7 +43,7 @@ const contact: { href: string; title: string; icon: string }[] = [
   />
 
   <div>
-    <dev class="flex flex-row justify-center align-middle gap-3 mb-2">
+    <dev class="flex flex-row justify-center gap-3 mb-2 align-middle">
       <h1>Ilya Balter</h1>
       <ThemeToggle />
     </dev>

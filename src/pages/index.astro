@@ -1,11 +1,22 @@
 ---
-import Welcome from "@components/Welcome.astro";
 import Layout from "@layouts/Layout.astro";
+
+import About from "@components/About.astro";
+import Skills from "@components/Skills.astro";
+import Tools from "@components/Tools.astro";
+import Experience from "@components/Experience.astro";
 
 import "@styles/theme.scss";
 import "@styles/index.scss";
 ---
 
 <Layout>
-  <Welcome />
+    <main
+      class="gap-3 px-56 text-center py-14 2xl:grid 2xl:grid-rows-5 2xl:grid-cols-8 bg-stripes-fuchsia"
+    >
+      <About />
+      <Skills />
+      <Tools />
+      <Experience />
+    </main>
 </Layout>

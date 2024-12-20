@@ -1,0 +1,30 @@
+---
+import Pill from "@ui/Pill.astro";
+
+---
+<div
+  class="col-start-5 col-end-13 row-span-2 gap-3 resume-section 2xl:col-start-3 2xl:col-end-9"
+>
+  <div class="grid grid-cols-2">
+    <div>
+      <span>Tools i use as Developer and DevOps</span>
+      <div class="flex flex-col flex-wrap justify-around gap-3 pt-2 text-left">
+        <span>Note taking: <Pill text="Obsidian"/>  <Pill text="Excalidraw"/></span>  
+        <span>Windows setup: <Pill text="Windows Terminal + Startship"/>  <Pill text="GlazeWM"/>  <Pill text="PowerToys"/></span>
+        <span>Linux setup: <Pill text="ArchLinux + Hyprland"/>  <Pill text="Fedora"/> <Pill text="Zsh + OhMyZsh"/>  <Pill text="Superfile"/></span>
+        <span>Homelab Server: <Pill text="Ubuntu Server + CasaOS"/>  <Pill text="Docker + Portainer"/> <Pill text="NextCloud"/></span>
+        <span>Frameworks: <Pill text="ReactJs + Typescript"/> <Pill text="AstroJs"/> <Pill text="TailwindCSS"/> <Pill text="Tauri"/> <Pill text="NestJs"/></span>
+        <span>Databases: <Pill text="PostgreSQL"/>  <Pill text="SQL"/></span>
+        <span>ORM: <Pill text="Prisma"/></span>
+        <span>API: <Pill text="REST"/>  <Pill text="SOAP"/> <Pill text="GraphQL"/></span>
+        <span>Build tools: <Pill text="Vite"/></span>
+      </div>
+    </div>
+    <div>
+      <span>Courses</span>
+      <div class="flex flex-col flex-wrap justify-around gap-3 pt-2 text-left">
+        <a class="underline transition-all hover:text-sky-400" href="https://practicum.yandex.kz/sys-admin/?from=catalog">System Administrator (Ongoing)</a>  
+      </div>
+    </div>
+  </div>
+</div>
