@@ -10,9 +10,10 @@ const work: {
   dateStart: Date;
   dateEnd: Date;
   tags: string[];
+  description: string;
 }[] = [
   {
-    title: 'ТОО "SMARTCO SOLUTIONS"',
+    title: 'SMARTCO SOLUTIONS',
     dateStart: new Date(2024, 8, 1),
     dateEnd: new Date(),
     tags: [
@@ -22,9 +23,10 @@ const work: {
       "Repository Administration",
       "Database Administration",
     ],
+    description: "Developed solutions in ERP, GDP, and TOIR configurations. Deployed and managed configuration storage repositories across various platforms. Built integrations with external mining operations accounting systems. Automated data export/import processes for mining operations."
   },
   {
-    title: 'Компания по страхованию жизни "Евразия"',
+    title: 'Eurasia Life Insurance Company',
     dateStart: new Date(2023, 8, 1),
     dateEnd: new Date(2024, 8, 1),
     tags: [
@@ -35,6 +37,7 @@ const work: {
       "Sales Planning Module Development",
       "ESBD Integration",
     ],
+    description: "Developed enhancements for the 'Enterprise Management' configuration adapted for the insurance sector. Created mechanisms and reports for implementing IFRS 17 standards. Led the development of new integration modules with the Unified Data System (UDS). Designed and implemented a sales planning and execution module as the lead developer."
   },
   {
     title: "Sulpak",
@@ -46,9 +49,10 @@ const work: {
       "HR Module Automation",
       "Incentive Module Development",
     ],
+    description: "Worked in the Payroll and HR Department, leading development projects related to employee motivation calculation and payouts, as well as the calculation and processing of deductions. Developed automation for creating, modifying, and deleting user accounts in the 1C system based on HR documentation."
   },
   {
-    title: 'ТОО "СВБ Интеллект Технологии"',
+    title: 'SVB Intellect Technologies',
     dateStart: new Date(2021, 8, 1),
     dateEnd: new Date(2023, 5, 1),
     tags: [
@@ -59,9 +63,10 @@ const work: {
       "Data Migration",
       "Integration Rules",
     ],
+    description: "Developed new accounting modules, reports, data exchange rules, and enhanced standard configurations of BK 2.0 and 3.0, as well as 'Small Business Management'. Led the development of a new data exchange system between 'Holding Management' and 26 BK 3.0 databases for 'Global Beverages'. Spearheaded the creation of a student accounting module for UIB University."
   },
   {
-    title: 'ИП "Move IT"',
+    title: 'Move IT',
     dateStart: new Date(2021, 5, 1),
     dateEnd: new Date(2021, 8, 1),
     tags: [
@@ -70,6 +75,7 @@ const work: {
       "Extension Development",
       "Integration Rules",
     ],
+    description: "Developed additional functionality based on the BK 3.0 configuration. Created a data migration exchange rule from BK 3.0 to 'Small Business Management' (UNF)." 
   },
 ];
 ---
@@ -98,7 +104,7 @@ const work: {
               <Pill text={tag} />
             ))}
           </div>
-          {/* <span class="w-full text-sm text-start">{info.description}</span> */}
+          <span class="w-full text-sm text-start">{info.description}</span>
         </div>
       </section>
     ))
